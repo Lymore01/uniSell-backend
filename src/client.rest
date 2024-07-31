@@ -36,5 +36,13 @@ Content-Type:application/json
     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffmZUpuBxXWqra3KJbxV_tifTW0ItuxuhTw&s"
 }
 
-# trailing comma error
+#! trailing comma error
+
+#?  
+# routes depend on controllers
+# controller depends on use case
+# use case depend on repo, entity
+# repo depends on database
+
+# entity>use case>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint
 
