@@ -32,8 +32,8 @@ const productsController = new ProductController({
 
 userRouter.post("/create-product", (req, res) => productsController.create(req,res))
 userRouter.get("/all", (req, res) => productsController.listAllProducts(req,res))
-userRouter.delete("/delete/:id", (req, res) => productsController.deleteProduct(req,res))
-userRouter.get("/:id", (req, res) => productsController.getProductById(req,res))
+userRouter.delete("/delete/:id", (req, res) => productsController.deleteProducts(req,res))
+userRouter.get("/:id", (req, res) => productsController.getProductByIds(req,res))
 userRouter.put("/update/:id", (req, res) => productsController.updateProductById(req,res))
 
 

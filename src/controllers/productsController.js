@@ -15,9 +15,6 @@ class ProductController {
 
   async create(req, res) {
     try {
-      // !when i use sample data it works
-      
-      console.log(req.body)
       const productData = {
         id: Date.now().toString(),
         prodName: req.body.prodName,
@@ -46,7 +43,7 @@ class ProductController {
     }
   }
 
-  async getProductById(req, res) {
+  async getProductByIds(req, res) {
     try {
       const { id } = req.params;
       const product = await this.getProductById.execute(id);
@@ -60,7 +57,7 @@ class ProductController {
     }
   }
 
-  async deleteProduct(req, res) {
+  async deleteProducts(req, res) {
     try {
       const { id } = req.params;
       const product = await this.deleteProduct.execute(id);
@@ -69,7 +66,7 @@ class ProductController {
       } else {
         res
           .status(200)
-          .json({ message: `${product.prodName} deleted`, product });
+          .json({ message: `${id} deleted`, product });
       }
     } catch (error) {
       res.status(500).json({ message: error.message });
@@ -79,7 +76,6 @@ class ProductController {
   async updateProductById(req, res) {
     try {
       const { id } = req.params;
-      console.log(req.body); // Log the incoming request body
 
       const productData = {
         prodName: req.body.prodName,

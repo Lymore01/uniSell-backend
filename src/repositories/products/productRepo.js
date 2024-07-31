@@ -19,7 +19,7 @@ class ProductRepo {
   }
 
   async delete(prodId) {
-    ProductModel.findOneAndDelete({ prodId });
+    await ProductModel.findOneAndDelete({ id: prodId });
     return true;
   }
 

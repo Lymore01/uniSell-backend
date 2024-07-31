@@ -1,7 +1,7 @@
-GET http://localhost:3000/api/product/all
+GET http://localhost:3000/api/all
 
 ###
-GET http://localhost:3000/api/product/1
+GET http://localhost:3000/api/1722444884668
 
 ###
 POST http://localhost:3000/api/create-product
@@ -19,10 +19,22 @@ Content-Type:application/json
 }
 
 ###
-DELETE http://localhost:3000/api/product/delete/3
+DELETE http://localhost:3000/api/delete/1722444884668
 
 ###
-PUT http://localhost:3000/api/product/update/3
+PUT http://localhost:3000/api/update/1722444884668
+Content-Type:application/json
+
+{
+    "prodName":"bevy perfumes",
+    "description":"nice matte perfume/cologne",
+    "price":205.00,
+    "quantity":40,
+    "color":"white",
+    "size":"45",
+    "categoryId":"4",
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffmZUpuBxXWqra3KJbxV_tifTW0ItuxuhTw&s"
+}
 
 # trailing comma error
 
