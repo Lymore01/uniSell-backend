@@ -1,0 +1,28 @@
+GET http://localhost:3000/api/product/all
+
+###
+GET http://localhost:3000/api/product/1
+
+###
+POST http://localhost:3000/api/create-product
+Content-Type:application/json
+
+{
+    "prodName":"omil fragnace",
+    "description":"powerfull wood perfume/cologne",
+    "price":345.00,
+    "quantity":40,
+    "color":"black",
+    "size":"45",
+    "categoryId":"4",
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffmZUpuBxXWqra3KJbxV_tifTW0ItuxuhTw&s"
+}
+
+###
+DELETE http://localhost:3000/api/product/delete/3
+
+###
+PUT http://localhost:3000/api/product/update/3
+
+# trailing comma error
+
