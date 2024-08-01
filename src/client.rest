@@ -1,9 +1,16 @@
+
+# * Products api tests
+
+# ? Works
 GET http://localhost:3000/api/all
 
 ###
-GET http://localhost:3000/api/1722444884668
+# ? works
+GET http://localhost:3000/api/product/1722444884668
 
 ###
+# ? works
+
 POST http://localhost:3000/api/create-product
 Content-Type:application/json
 
@@ -19,9 +26,13 @@ Content-Type:application/json
 }
 
 ###
+# ? works
+
 DELETE http://localhost:3000/api/delete/1722444884668
 
 ###
+# ? works
+
 PUT http://localhost:3000/api/update/1722444884668
 Content-Type:application/json
 
@@ -36,6 +47,28 @@ Content-Type:application/json
     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffmZUpuBxXWqra3KJbxV_tifTW0ItuxuhTw&s"
 }
 
+
+###
+# * orders api tests
+
+# ? works
+POST http://localhost:3000/api/order/create-order
+Content-Type:application/json
+
+{
+  "id": "order12345",
+  "userId": "64c8fb9e4f50f32e6c3a5b89",
+  "shopId": "64c8fc1a4f50f32e6c3a5b8a",
+  "products": [
+    "64c8fc8e4f50f32e6c3a5b8b",
+    "64c8fca34f50f32e6c3a5b8c"
+  ],
+  "totalPrice": 1500,
+  "paymentMethod": "M-pesa",
+  "shippingAddress": "1234 Nairobi St, Nairobi, Kenya",
+  "orderStatus": true
+}
+
 #! trailing comma error
 
 #?  
@@ -44,5 +77,5 @@ Content-Type:application/json
 # use case depend on repo, entity
 # repo depends on database
 
-# entity>use case>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint
+# entity>use case>models>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint
 
