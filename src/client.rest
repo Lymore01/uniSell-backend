@@ -2,7 +2,7 @@
 # * Products api tests
 
 # ? Works
-GET http://localhost:3000/api/all
+GET http://localhost:3000/api/product/all
 
 ###
 # ? works
@@ -69,13 +69,87 @@ Content-Type:application/json
   "orderStatus": true
 }
 
-#! trailing comma error
+###
+# ? works
+GET http://localhost:3000/api/order/all
 
-#?  
+###
+# ? works
+GET http://localhost:3000/api/order/1722506179491
+
+###
+# ? works
+GET http://localhost:3000/api/order/user/64c8fb9e4f50f32e6c3a5b89
+
+###
+# ? works
+DELETE http://localhost:3000/api/order/delete/1722506179491
+
+###
+# * Category api tests
+# ? works
+POST http://localhost:3000/api/category/create
+Content-Type:application/json
+
+{
+    "name":"Clothes",
+    "description":"this is a new clothes category."
+}
+
+###
+# ? works
+DELETE http://localhost:3000/api/category/delete/1722510419489
+
+
+###
+# ? works
+GET http://localhost:3000/api/category/all
+
+###
+# ? works
+GET http://localhost:3000/api/category/1722510844605
+
+
+# * shop api tests
+###
+# ? works
+POST http://localhost:3000/api/shop/create
+Content-Type: application/json
+
+{
+  "id": "shop12345",
+  "userId": "60d5f9c55b4c1e2a10b5b10a",
+  "shopName": "Tech Gadgets Store",
+  "shopCategory": "60d5f9c55b4c1e2a10b5b10b",
+  "products": [
+    "60d5f9c55b4c1e2a10b5b10c",
+    "60d5f9c55b4c1e2a10b5b10d"
+  ],
+  "paymentMethod": "M-pesa",
+  "shopDescription": "A store that offers the latest tech gadgets and accessories."
+}
+
+###
+# ? works
+DELETE http://localhost:3000/api/shop/delete/1722513282784
+
+###
+# ? works
+GET http://localhost:3000/api/shop/all
+
+###
+# ?works
+GET http://localhost:3000/api/shop/1722513839458
+
+###
+# ? works
+GET http://localhost:3000/api/shop/user/60d5f9c55b4c1e2a10b5b10a
+
+
 # routes depend on controllers
 # controller depends on use case
 # use case depend on repo, entity
 # repo depends on database
 
-# entity>use case>models>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint
+# entity>use case>models>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint(index.js)
 

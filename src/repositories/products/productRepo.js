@@ -41,3 +41,5 @@ class ProductRepo {
 }
 export default ProductRepo;
 
+// ? when fetching from the db use async await 
+
