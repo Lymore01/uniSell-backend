@@ -145,6 +145,21 @@ GET http://localhost:3000/api/shop/1722513839458
 # ? works
 GET http://localhost:3000/api/shop/user/60d5f9c55b4c1e2a10b5b10a
 
+###
+# ? works
+POST http://localhost:3000/api/payment/stk-push
+Content-Type: application/json
+
+{
+   "amount": 1,
+  "phone": "2547xxxxxxxx",
+  "Order_ID": "123456"
+}
+
+###
+POST http://localhost:3000/api/payment/stk-push-callback/123456
+# ! issue: interchanged key and secret in .env, using .then in axios
+
 
 # routes depend on controllers
 # controller depends on use case
@@ -153,3 +168,9 @@ GET http://localhost:3000/api/shop/user/60d5f9c55b4c1e2a10b5b10a
 
 # entity>use case>models>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint(index.js)
 
+# TODO : implement mpesa integration, update shop func, aggregation pipelines
+
+
+###
+# ? works
+POST http://localhost:3000/api/payment/confirmPayment/ws_CO_02082024123006999719520494
