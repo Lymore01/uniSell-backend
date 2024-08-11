@@ -4,14 +4,13 @@ import ProductController from "../../../controllers/productsController.js";
 import ProductRepo from "../../../repositories/products/productRepo.js";
 import CreateProduct from "../../../use-cases/products/createProduct.js";
 import DeleteProductById from "../../../use-cases/products/deleteProduct.js";
-
 import GetAllProducts from "../../../use-cases/products/getAllProducts.js";
 import GetProductById from "../../../use-cases/products/getProductById.js";
 import UpdateProduct from "../../../use-cases/products/updateProduct.js";
 
-const userRouter = e.Router();
+const productRouter = e.Router();
 
-userRouter.use(bodyParser.json())
+productRouter.use(bodyParser.json())
 
 
 const productRepo = new ProductRepo();
@@ -30,14 +29,14 @@ const productsController = new ProductController({
 
 
 
-userRouter.post("/create-product", (req, res) => productsController.create(req,res))
-userRouter.get("/all", (req, res) => productsController.listAllProducts(req,res))
-userRouter.delete("/delete/:id", (req, res) => productsController.deleteProducts(req,res))
-userRouter.get("/:id", (req, res) => productsController.getProductByIds(req,res))
-userRouter.put("/update/:id", (req, res) => productsController.updateProductById(req,res))
+productRouter.post("/create-product", (req, res) => productsController.create(req,res))
+productRouter.get("/all", (req, res) => productsController.listAllProducts(req,res))
+productRouter.delete("/delete/:id", (req, res) => productsController.deleteProducts(req,res))
+productRouter.get("/:id", (req, res) => productsController.getProductByIds(req,res))
+productRouter.put("/update/:id", (req, res) => productsController.updateProductById(req,res))
 
 
 
-export default userRouter
+export default productRouter
 
 

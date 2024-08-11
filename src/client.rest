@@ -168,9 +168,50 @@ POST http://localhost:3000/api/payment/stk-push-callback/123456
 
 # entity>use case>models>create repo interfaces>implement repo>controllers>routes>db connection>entrypoint(index.js)
 
-# TODO : implement mpesa integration, update shop func, aggregation pipelines
+# TODO : update shop func, aggregation pipelines
 
 
 ###
 # ? works
 POST http://localhost:3000/api/payment/confirmPayment/ws_CO_02082024123006999719520494
+
+###
+# * users api tests
+POST http://localhost:3000/api/user/sign-up
+Content-Type: application/json
+
+{
+      "username": "Jane pette",
+      "email": "jane@gmail.com",
+      "image": "jane's image",
+      "password": "jane@1234",
+      "role": "seller"
+}
+
+###
+POST http://localhost:3000/api/user/sign-in
+Content-Type: application/json
+
+{
+  "email": "jane@gmail.com",
+  "password": "jane@1234"
+}
+
+###
+GET http://localhost:3000/api/user/66b8adeddd968cf3bfc0f278
+
+###
+PUT http://localhost:3000/api/user/update/66b8a34da06c90b91bc729dc
+Content-Type: application/json
+
+{
+  "username":"kelly limo",
+  "role":"buyer"
+}
+
+###
+DELETE http://localhost:3000/api/user/delete/66b8a34da06c90b91bc729dc
+
+###
+GET http://localhost:3000/try
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmI4YWRlZGRkOTY4Y2YzYmZjMGYyNzgiLCJpYXQiOjE3MjMzODAzNjQsImV4cCI6MTcyMzM4MDM4NH0.JxjKg6iEs1esy-jIn-alGEHWv4tIrBDGdvGrUaD1MnM
