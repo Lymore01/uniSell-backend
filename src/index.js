@@ -8,7 +8,6 @@ import shopRouter from "./frameworks/express/routes/shopRoutes.js";
 import paymentRouter from "./frameworks/express/routes/paymentRoute.js";
 import userRouter from "./frameworks/express/routes/userRoutes.js";
 import bodyParser from "body-parser";
-import authenticateAccessToken from "./middlewares/user/authenticateAccessToken.js";
 import cors from "cors"
 import db from "./frameworks/database/connect.js";
 const app = e();
@@ -26,10 +25,6 @@ app.use("/api/category", categoryRouter);
 app.use("/api/shop", shopRouter);
 app.use("/api/payment", paymentRouter);
 app.use("/api/user", userRouter);
-
-app.get("/try", authenticateAccessToken, (req,res)=>{
-  res.send("hello")
-})
 
 
 

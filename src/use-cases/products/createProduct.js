@@ -16,6 +16,7 @@ class CreateProduct {
       size: productData.size,
       categoryId: productData.categoryId,
       image: productData.image,
+      imageId: productData.imageId
     });
     return await this.productRepository.save(product);
   }

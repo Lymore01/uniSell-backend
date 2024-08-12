@@ -24,7 +24,8 @@ class ProductController {
         color: req.body.color,
         size: req.body.size,
         categoryId: req.body.categoryId,
-        image: req.body.image,
+        image: req.file.path,
+        imageId: req.file.filename,
       };
       const product = await this.createProduct.execute(productData);
       res.status(201).json({ message: "Product Created", product });
@@ -64,9 +65,7 @@ class ProductController {
       if (!product) {
         res.status(400).json({ message: "Error deleting product" });
       } else {
-        res
-          .status(200)
-          .json({ message: `${id} deleted`, product });
+        res.status(200).json({ message: `${id} deleted`, product });
       }
     } catch (error) {
       res.status(500).json({ message: error.message });

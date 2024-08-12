@@ -1,7 +1,7 @@
 // product entity
 
 class Product {
-    constructor({ id, prodName, description, price, quantity, color, size, categoryId, image, createdAt, updatedAt }){
+    constructor({ id, prodName, description, price, quantity, color, size, categoryId, image,imageId, createdAt, updatedAt }){
         this.id = id,
         this.prodName = prodName,
         this.description = description,
@@ -11,6 +11,7 @@ class Product {
         this.size = size,
         this.categoryId = categoryId,
         this.image = image,
+        this.imageId = imageId,
         this.createdAt = createdAt,
         this.updatedAt = updatedAt
     }

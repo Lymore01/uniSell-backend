@@ -29,7 +29,7 @@ const productsController = new ProductController({
 
 
 
-productRouter.post("/create-product", (req, res) => productsController.create(req,res))
+productRouter.post("/create-product",(req, res) => productsController.create(req,res))
 productRouter.get("/all", (req, res) => productsController.listAllProducts(req,res))
 productRouter.delete("/delete/:id", (req, res) => productsController.deleteProducts(req,res))
 productRouter.get("/:id", (req, res) => productsController.getProductByIds(req,res))
